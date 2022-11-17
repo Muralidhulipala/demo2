@@ -35,11 +35,11 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Successful POST request\", function () {\r",
-							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([401,202]);\r",
 							"});\r",
 							"pm.test(\"Your test name\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.value).to.eql(\"Murali\");\r",
+							"    pm.expect(jsonData.message).to.contains(\"User not authorized\");\r",
 							"});"
 						],
 						"type": "text/javascript"
